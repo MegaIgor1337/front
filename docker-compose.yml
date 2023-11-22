@@ -1,0 +1,32 @@
+version: '1.0'
+services:
+  db:
+    ports:
+      - 5432:5432
+    container_name: postgresql_container_forwarding_agent
+    image: postgres
+    environment:
+      DATABASE_URL_FORWARDING_AGENT: jdbc:postgresql://db:5432/forwarding_agent_db
+      DATABASE_PASSWORD_FORWARDING_AGENT: 1234
+      DATABASE_USERNAME_FORWARDING_AGENT: postgres
+      IMAGES_STORAGE_FOLDER_FORWARDING_AGENT: /var/our_image_storage
+      JWT_SECRET_PHRASE_FORWARDING_AGENT: NDQ1ZjAzNjQtMzViZi00MDRjLTljZjQtNjNjYWIyZTU5ZDYw
+      CORS_ALLOWED_ORIGINS: none
+      CORS_ALLOWED_METHODS: none
+    volumes:
+      - database-data:/var/lib/forwarding_agent_db
+    restart: always
+  backend:
+    build: .
+    container_name: app_container_forwarding_agent
+    ports:
+      - 8080:8080
+    environment:
+      db-url: jdbc:postgresql://db:5432/forwarding_agent_db
+      db-username: postgres
+      db-password: 1234
+    depends_on:
+      - db
+    restart: always
+volumes:
+  database-data:

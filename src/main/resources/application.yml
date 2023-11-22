@@ -1,0 +1,38 @@
+spring:
+  servlet:
+    multipart:
+      file-size-threshold: 2048
+      max-file-size: 5MB
+  datasource:
+    url: ${DATABASE_URL_FORWARDING_AGENT}
+    username: ${DATABASE_USERNAME_FORWARDING_AGENT}
+    password: ${DATABASE_PASSWORD_FORWARDING_AGENT}
+  liquibase:
+    change-log: db/changelog/changelog-master.xml
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+    properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: UNSPECIFIED
+  security:
+    cors:
+      allowedOrigins: ${CORS_ALLOWED_ORIGINS}
+      allowedMethods: ${CORS_ALLOWED_METHODS}
+    jwt:
+      secret: ${JWT_SECRET_PHRASE}
+      expired: 3600000
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  main:
+    banner-mode: "off"
+logging:
+  level:
+    root: info
+    your.suit: debug
+image:
+  storage-dir: ${IMAGE_STORAGE_FOLDER_FORWARDING_AGENT}
