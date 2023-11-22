@@ -4,74 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeccbe75-ae6a-4ef5-a620-934197285212" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/ApplicationRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/AuthenticationApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/RegistrationApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/exceptions/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/exceptions/EmailAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/exceptions/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/exceptions/RestAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/DocumentationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/RoleNameEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/UserStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/JwtUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtTokenFilterConfigurer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtTokenProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtUserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/RegistrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/annotation/IsEmailAlreadyExists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/annotation/IsEmailAlreadyExistsValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/AuthenticationRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/AuthenticationUserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/RegistrationRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/RegistrationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/AuthenticationUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/RegistrationUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/util/ValidateConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/001-create-table-roles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/002-insert-data-in-roles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/003-create-table-users.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/004-create-table-users-roles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/005-add-column-user-status-in-users.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/PostgreSQLTestContainerExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/api/controllers/RegistrationApiControllerIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/security/SecurityAuthenticationApiControllerIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/annotation/IsEmailAlreadyExistsValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/AuthenticationServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/RegistrationServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/AuthenticationUserMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/RegistrationUserMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/AuthenticationTestData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/RoleTestData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/UserTestData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testdata/add_users_with_different_roles.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testdata/clear_users_with_different_roles.sql" afterDir="false" />
+    <list default="true" id="aeccbe75-ae6a-4ef5-a620-934197285212" name="Changes" comment="created auth and registration with tests, added tables users and roles">
+      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/UserServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +75,7 @@
       <recent name="forward.agent.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IsEmailAlreadyExistsValidatorTest">
+  <component name="RunManager" selected="JUnit.UserServiceImplTest">
     <configuration name="IsEmailAlreadyExistsValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="forward_agent" />
       <extension name="coverage">
@@ -168,22 +102,6 @@
       <option name="PACKAGE_NAME" value="forwarding.agent.api.controllers" />
       <option name="MAIN_CLASS_NAME" value="forwarding.agent.api.controllers.RegistrationApiControllerIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationApiControllerIntegrationTest.shouldReturn200AndTokenWhenRegistrationWithValidParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="forward_agent" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="forwarding.agent.api.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="forwarding.agent.api.controllers" />
-      <option name="MAIN_CLASS_NAME" value="forwarding.agent.api.controllers.RegistrationApiControllerIntegrationTest" />
-      <option name="METHOD_NAME" value="shouldReturn200AndTokenWhenRegistrationWithValidParams" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,13 +138,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="forward_agent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="forwarding.agent.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="forwarding.agent.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="forwarding.agent.service.impl.UserServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceImplTest" />
         <item itemvalue="JUnit.IsEmailAlreadyExistsValidatorTest" />
         <item itemvalue="JUnit.RegistrationServiceImplTest.shouldReturnAuthenticationUserDtoWhenRegistrationSuccess" />
         <item itemvalue="JUnit.RegistrationUserMapperTest.shouldReturnUserWhenMapFromRegistrationDto" />
         <item itemvalue="JUnit.RegistrationApiControllerIntegrationTest" />
-        <item itemvalue="JUnit.RegistrationApiControllerIntegrationTest.shouldReturn200AndTokenWhenRegistrationWithValidParams" />
       </list>
     </recent_temporary>
   </component>
@@ -241,12 +174,24 @@
       <workItem from="1700519338316" duration="3884000" />
       <workItem from="1700580066461" duration="834000" />
       <workItem from="1700601321877" duration="4391000" />
-      <workItem from="1700646575366" duration="6088000" />
+      <workItem from="1700646575366" duration="6682000" />
     </task>
+    <task id="LOCAL-00001" summary="created auth and registration with tests, added tables users and roles">
+      <created>1700653637082</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700653637082</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created auth and registration with tests, added tables users and roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="created auth and registration with tests, added tables users and roles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
