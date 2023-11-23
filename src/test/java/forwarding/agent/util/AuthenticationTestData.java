@@ -3,7 +3,6 @@ package forwarding.agent.util;
 import forwarding.agent.persistense.entity.Role;
 import forwarding.agent.persistense.entity.RoleNameEnum;
 import forwarding.agent.persistense.entity.User;
-import forwarding.agent.persistense.entity.UserStatusEnum;
 import forwarding.agent.service.dto.AuthenticationRequestDto;
 import forwarding.agent.service.dto.AuthenticationUserDto;
 import forwarding.agent.service.dto.RegistrationRequestDto;
@@ -59,7 +58,6 @@ public class AuthenticationTestData {
                 .firstName(FIRST_NAME)
                 .lastName(LAST_NAME)
                 .fatherName(FATHER_NAME)
-                .userStatus(UserStatusEnum.NOT_CONFIRMED)
                 .roles(Set.of(
                         Role.builder().id(1L).roleName(RoleNameEnum.USER).build())
                 ).email(ADMIN_EMAIL)

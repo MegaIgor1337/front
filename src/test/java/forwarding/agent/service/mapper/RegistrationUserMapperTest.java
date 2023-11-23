@@ -32,7 +32,7 @@ public class RegistrationUserMapperTest {
     void shouldReturnUserWhenMapFromRegistrationDto() {
         RegistrationRequestDto requestDto = createRegistrationRequestDtoWithValidParams();
 
-        when(roleRepository.findByRoleName(RoleNameEnum.USER)).thenReturn(createRole());
+        when(roleRepository.findByRoleName(RoleNameEnum.UNCONFIRMED_USER)).thenReturn(createRole());
         when(passwordEncoder.encode(requestDto.password())).thenReturn(ENCODED_PASSWORD);
 
         User result = registrationUserMapper.fromRequestDtoToEntity(requestDto);

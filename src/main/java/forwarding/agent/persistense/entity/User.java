@@ -26,9 +26,6 @@ public class User {
     private String password;
     @Column(name = "email", nullable = false, unique = true)
     private String email;
-    @Enumerated(EnumType.STRING)
-    @Column(name = "user_status", nullable = false)
-    private UserStatusEnum userStatus;
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @ManyToMany(fetch = FetchType.EAGER)

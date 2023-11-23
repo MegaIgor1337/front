@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+    <changeSet id="008" author="tawerka1337228321@mail.ru">
+        <sql>
+            UPDATE roles SET role_name = 'UNCONFIRMED_USER' WHERE role_name = 'NOT_CONFIRMED_USER'
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -4,5 +4,6 @@ public enum RoleNameEnum {
     USER,
     ADMIN,
     SUPER_ADMIN,
-    ACCOUNTANT
+    ACCOUNTANT,
+    UNCONFIRMED_USER
 }

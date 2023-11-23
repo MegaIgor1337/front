@@ -1,7 +1,7 @@
-INSERT INTO users (first_name, last_name, father_name, email, password, user_status)
+INSERT INTO users (first_name, last_name, father_name, email, password)
 VALUES
-    ('Igor', 'Yakubovich', 'Sergeevich', 'user@gmail.com', '$2a$12$nU3NTASAvpso5NuAr..2UOQL15kPiJ.IiwFDVZVMP86TUvZrSrf0m', 'NOT_CONFIRMED'),
-    ('Alexey', 'Tagil', 'Ivanovich','user-user@mail.com', '$2a$12$Xd6uSdDeGUktWdcVm7MT7e.N/RGEkwK58XaiFuDTUw4FUqe/fpMN6', 'CONFIRMED');
+    ('Igor', 'Yakubovich', 'Sergeevich', 'user@gmail.com', '$2a$12$nU3NTASAvpso5NuAr..2UOQL15kPiJ.IiwFDVZVMP86TUvZrSrf0m'),
+    ('Alexey', 'Tagil', 'Ivanovich','user-user@mail.com', '$2a$12$Xd6uSdDeGUktWdcVm7MT7e.N/RGEkwK58XaiFuDTUw4FUqe/fpMN6');
 
 INSERT INTO users_roles (user_id, role_id)
 VALUES

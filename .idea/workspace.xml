@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeccbe75-ae6a-4ef5-a620-934197285212" name="Changes" comment="created auth and registration with tests, added tables users and roles">
-      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/UserServiceImplTest.java" afterDir="false" />
+    <list default="true" id="aeccbe75-ae6a-4ef5-a620-934197285212" name="Changes" comment="added UserServiceImplTest">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/006-delete-user-status-in-users.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/007-insert-role-in-roles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/008-update-role-name-in-roles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/RoleNameEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/RoleNameEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/UserStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/RegistrationUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/RegistrationUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/RegistrationUserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/RegistrationUserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/AuthenticationTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/AuthenticationTestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testdata/add_users_with_different_roles.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testdata/add_users_with_different_roles.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,31 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JAVA/forwarding_agent",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "0afc58b5aa81f4ed6139ad8fca0c6765",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/forwarding_agent&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0afc58b5aa81f4ed6139ad8fca0c6765&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JAVA\forwarding_agent\src\test\resources\testdata" />
@@ -75,7 +88,7 @@
       <recent name="forward.agent.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceImplTest">
+  <component name="RunManager" selected="JUnit.RegistrationApiControllerIntegrationTest">
     <configuration name="IsEmailAlreadyExistsValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="forward_agent" />
       <extension name="coverage">
@@ -155,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RegistrationApiControllerIntegrationTest" />
         <item itemvalue="JUnit.UserServiceImplTest" />
         <item itemvalue="JUnit.IsEmailAlreadyExistsValidatorTest" />
         <item itemvalue="JUnit.RegistrationServiceImplTest.shouldReturnAuthenticationUserDtoWhenRegistrationSuccess" />
         <item itemvalue="JUnit.RegistrationUserMapperTest.shouldReturnUserWhenMapFromRegistrationDto" />
-        <item itemvalue="JUnit.RegistrationApiControllerIntegrationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +187,8 @@
       <workItem from="1700519338316" duration="3884000" />
       <workItem from="1700580066461" duration="834000" />
       <workItem from="1700601321877" duration="4391000" />
-      <workItem from="1700646575366" duration="6682000" />
+      <workItem from="1700646575366" duration="6708000" />
+      <workItem from="1700693061980" duration="2540000" />
     </task>
     <task id="LOCAL-00001" summary="created auth and registration with tests, added tables users and roles">
       <created>1700653637082</created>
@@ -183,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700653637082</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added UserServiceImplTest">
+      <created>1700654068359</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700654068359</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +212,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created auth and registration with tests, added tables users and roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="created auth and registration with tests, added tables users and roles" />
+    <MESSAGE value="added UserServiceImplTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added UserServiceImplTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
