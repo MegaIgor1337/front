@@ -67,13 +67,13 @@ public class JwtTokenProvider {
         try {
             Jws<Claims> claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             if (claims.getBody().getExpiration().before(new Date())) {
-                log.info("IN validateToken - JWT token has expired");
+                log.info("validateToken - JWT token has expired");
                 return false;
             }
-            log.info("IN validateToken - JWT token valid");
+            log.info("validateToken - JWT token valid");
             return true;
         } catch (JwtException | IllegalArgumentException e) {
-            log.info("IN validateToken  - expired or invalid JWT token");
+            log.info("validateToken  - expired or invalid JWT token");
             return false;
         }
     }

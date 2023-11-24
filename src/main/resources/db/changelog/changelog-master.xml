@@ -11,4 +11,5 @@
     <include file="changelogs/006-delete-user-status-in-users.xml" relativeToChangelogFile="true"/>
     <include file="changelogs/007-insert-role-in-roles.xml" relativeToChangelogFile="true"/>
     <include file="changelogs/008-update-role-name-in-roles.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/009-update-role-name-in-role-add-ROLE_.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

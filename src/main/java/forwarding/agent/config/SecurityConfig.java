@@ -1,6 +1,7 @@
 package forwarding.agent.config;
 
 import forwarding.agent.api.exceptions.RestAuthenticationEntryPoint;
+import forwarding.agent.persistense.entity.Role;
 import forwarding.agent.persistense.entity.RoleNameEnum;
 import forwarding.agent.security.jwt.JwtTokenFilterConfigurer;
 import forwarding.agent.security.jwt.JwtTokenProvider;
@@ -28,7 +29,7 @@ public class SecurityConfig {
     };
     private static final String USER_URL = "/api/v1/users/**";
     private static final String UNCONFIRMED_USER_URL = "/api/v1/unconfirmed/**";
-    private static final String ADMIN_URL = "/api/v1/admins/**";
+    private static final String ADMIN_URL = "/api/v1/admin/**";
     private static final String SUPER_ADMIN_URL = "/api/v1/superAdmin/**";
     private static final String ACCOUNTANT_URL = "/api/v1/accountant/**";
 
@@ -44,12 +45,12 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers(UNCONFIRMED_USER_URL).hasRole(RoleNameEnum.UNCONFIRMED_USER.toString())
-                .requestMatchers(USER_URL).hasAnyRole(RoleNameEnum.USER.toString())
-                .requestMatchers(ADMIN_URL).hasRole(RoleNameEnum.ADMIN.toString())
-                .requestMatchers(SUPER_ADMIN_URL).hasRole(RoleNameEnum.SUPER_ADMIN.toString())
-                .requestMatchers(ACCOUNTANT_URL).hasRole(RoleNameEnum.ACCOUNTANT.toString())
                 .requestMatchers(AUTH_WHITELIST).permitAll()
+                .requestMatchers(UNCONFIRMED_USER_URL).hasAnyAuthority(RoleNameEnum.ROLE_UNCONFIRMED_USER.getAuthority())
+                .requestMatchers(USER_URL).hasAnyAuthority(RoleNameEnum.ROLE_USER.getAuthority())
+                .requestMatchers(ADMIN_URL).hasAnyAuthority(RoleNameEnum.ROLE_ADMIN.getAuthority())
+                .requestMatchers(SUPER_ADMIN_URL).hasAnyAuthority(RoleNameEnum.ROLE_SUPER_ADMIN.getAuthority())
+                .requestMatchers(ACCOUNTANT_URL).hasAnyAuthority(RoleNameEnum.ROLE_ACCOUNTANT.getAuthority())
                 .anyRequest().authenticated()
                 .and()
                 .apply(new JwtTokenFilterConfigurer(jwtTokenProvider))

@@ -5,5 +5,5 @@ VALUES
 
 INSERT INTO users_roles (user_id, role_id)
 VALUES
-    ((SELECT u.id FROM users u WHERE u.email = 'user@gmail.com'), (SELECT r.id FROM roles r WHERE r.role_name = 'ADMIN')),
-    ((SELECT u.id FROM users u WHERE u.email = 'user-user@mail.com'), (SELECT r.id FROM roles r WHERE r.role_name = 'USER'));
+    ((SELECT u.id FROM users u WHERE u.email = 'user@gmail.com'), (SELECT r.id FROM roles r WHERE r.role_name = 'ROLE_ADMIN')),
+    ((SELECT u.id FROM users u WHERE u.email = 'user-user@mail.com'), (SELECT r.id FROM roles r WHERE r.role_name = 'ROLE_USER'));

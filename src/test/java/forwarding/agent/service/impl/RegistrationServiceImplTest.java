@@ -46,6 +46,6 @@ public class RegistrationServiceImplTest {
 
         assertNotNull(result);
         assertEquals(requestDto.email(), result.email());
-        assertTrue(result.roleNames().contains(RoleNameEnum.USER));
+        assertTrue(result.roleNames().contains(RoleNameEnum.ROLE_USER));
     }
 }

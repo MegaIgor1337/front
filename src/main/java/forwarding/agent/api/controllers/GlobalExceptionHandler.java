@@ -1,8 +1,6 @@
 package forwarding.agent.api.controllers;
 
-import forwarding.agent.api.exceptions.BadRequestException;
-import forwarding.agent.api.exceptions.EmailAlreadyExistsException;
-import forwarding.agent.api.exceptions.ErrorResponse;
+import forwarding.agent.api.exceptions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -32,7 +30,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> handleBadRequest(MethodArgumentNotValidException exception) {
+    public Map<String, String> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
         Map<String, String> errors = new HashMap<>();
         exception.getBindingResult().getAllErrors().forEach(error -> {
             String fieldName = ((FieldError) error).getField();
@@ -47,6 +45,26 @@ public class GlobalExceptionHandler {
     public ErrorResponse handleEmailAlreadyExistsException(EmailAlreadyExistsException exception) {
         return new ErrorResponse(
                 HttpStatus.BAD_REQUEST.value(),
+                exception.getMessage(),
+                ZonedDateTime.now().withZoneSameInstant(ZoneId.of(EUROPE_MINSK))
+        );
+    }
+
+    @ExceptionHandler(UserAlreadyConfirmedException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleUserAlreadyConfirmedException(UserAlreadyConfirmedException exception) {
+        return new ErrorResponse(
+                HttpStatus.BAD_REQUEST.value(),
+                exception.getMessage(),
+                ZonedDateTime.now().withZoneSameInstant(ZoneId.of(EUROPE_MINSK))
+        );
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleUserNotFoundException(UserNotFoundException exception) {
+        return new ErrorResponse(
+                HttpStatus.NOT_FOUND.value(),
                 exception.getMessage(),
                 ZonedDateTime.now().withZoneSameInstant(ZoneId.of(EUROPE_MINSK))
         );

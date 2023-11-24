@@ -31,11 +31,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         User user = userRepository.findByEmail(requestDto.email());
         if (user != null && passwordEncoder.matches(requestDto.password(), user.getPassword())) {
             AuthenticationUserDto authenticationUserDto = authenticationUserMapper.fromEntityToAuthenticationDto(user);
-            log.info("IN findByEmailAndPassword - authenticationUserDto: {} found by email: {}", authenticationUserDto,
+            log.info("findByEmailAndPassword - authenticationUserDto: {} found by email: {}", authenticationUserDto,
                     authenticationUserDto.email());
             return authenticationUserDto;
         } else {
-            log.info("IN findByEmailAndPassword - Invalid username or password");
+            log.info("findByEmailAndPassword - Invalid username or password");
             throw new BadRequestException("Wrong email or password");
         }
     }

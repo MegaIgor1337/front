@@ -13,7 +13,7 @@ import java.util.Set;
 @Component
 @RequiredArgsConstructor
 public class RegistrationUserMapper {
-    private static final RoleNameEnum DEFAULT_ROLE_NAME = RoleNameEnum.UNCONFIRMED_USER;
+    private static final RoleNameEnum DEFAULT_ROLE_NAME = RoleNameEnum.ROLE_UNCONFIRMED_USER;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
 

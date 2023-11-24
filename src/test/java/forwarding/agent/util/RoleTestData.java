@@ -9,7 +9,7 @@ public class RoleTestData {
     public static Role createRole() {
         return Role.builder()
                 .id(1L)
-                .roleName(RoleNameEnum.USER)
+                .roleName(RoleNameEnum.ROLE_USER)
                 .build();
     }
 }

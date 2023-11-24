@@ -17,6 +17,6 @@ public record AuthenticationRequestDto(
         String email,
 
         @NotBlank(message = "Password is mandatory!")
-        @Schema(defaultValue = "2222", description = "Password")
+        @Schema(defaultValue = "sdfF32d", description = "Password")
         String password) implements Serializable {
 }

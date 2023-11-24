@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Tag(name = "Authentication Controller", description = "API for working with authentication")
+@Slf4j
 @Validated
 @RestController
 @RequiredArgsConstructor
@@ -32,6 +34,7 @@ public class AuthenticationApiController {
     @Operation(summary = "Authenticate user")
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> login(@Valid @RequestBody AuthenticationRequestDto requestDto) {
+        log.info("User started authorize {}", requestDto.email());
         AuthenticationUserDto user = authenticationService.findByEmailAndPassword(requestDto);
         Map<String, String> response = new HashMap<>();
         response.put("email", user.email());

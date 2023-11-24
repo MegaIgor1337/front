@@ -48,7 +48,7 @@ public class AuthenticationTestData {
     public static AuthenticationUserDto createAuthenticationUserDto() {
         return AuthenticationUserDto.builder()
                 .email(EMAIL)
-                .roleNames(Set.of(RoleNameEnum.USER))
+                .roleNames(Set.of(RoleNameEnum.ROLE_USER))
                 .build();
     }
 
@@ -59,7 +59,7 @@ public class AuthenticationTestData {
                 .lastName(LAST_NAME)
                 .fatherName(FATHER_NAME)
                 .roles(Set.of(
-                        Role.builder().id(1L).roleName(RoleNameEnum.USER).build())
+                        Role.builder().id(1L).roleName(RoleNameEnum.ROLE_USER).build())
                 ).email(ADMIN_EMAIL)
                 .password(ENCODED_PASSWORD)
                 .build();
