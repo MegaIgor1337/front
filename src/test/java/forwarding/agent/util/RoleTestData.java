@@ -12,4 +12,11 @@ public class RoleTestData {
                 .roleName(RoleNameEnum.ROLE_USER)
                 .build();
     }
+
+    public static Role craeteUncomfiredRole() {
+        return Role.builder()
+                .id(1L)
+                .roleName(RoleNameEnum.ROLE_UNCONFIRMED_USER)
+                .build();
+    }
 }

@@ -4,37 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeccbe75-ae6a-4ef5-a620-934197285212" name="Changes" comment="added new role UNCONFIRMED_USER">
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/ConfirmApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/exceptions/UserAlreadyConfirmedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/exceptions/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/annotation/IsUserAlreadyConfirmed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/annotation/IsUserAlreadyConfirmedValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/annotation/IsUserExists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/annotation/IsUserExistsValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/UserResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelogs/009-update-role-name-in-role-add-ROLE_.xml" afterDir="false" />
+    <list default="true" id="aeccbe75-ae6a-4ef5-a620-934197285212" name="Changes" comment="added ConfirmApiController for ROLE_ADMIN">
+      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/annotation/IsUserAlreadyConfirmedValidatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/annotation/IsUserExistsValidatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/UserMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/AuthenticationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/AuthenticationApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/RegistrationApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/api/controllers/RegistrationApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/RoleNameEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/RoleNameEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/JwtUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/JwtUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/security/jwt/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/AuthenticationRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/AuthenticationRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/RegistrationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/RegistrationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/persistense/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/dto/UserResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/RegistrationUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/forwarding/agent/service/mapper/RegistrationUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/RegistrationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/RegistrationServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/RegistrationUserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/mapper/RegistrationUserMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/AuthenticationTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/AuthenticationTestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/service/impl/UserServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/RoleTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/RoleTestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testdata/add_users_with_different_roles.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testdata/add_users_with_different_roles.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/UserTestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/forwarding/agent/util/UserTestData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,31 +46,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JAVA/bootcamp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "0afc58b5aa81f4ed6139ad8fca0c6765",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/microservice-storage-bootcamp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0afc58b5aa81f4ed6139ad8fca0c6765&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JAVA\forwarding_agent\src\test\resources\testdata" />
@@ -106,46 +86,16 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApplicationRunner">
-    <configuration name="IsEmailAlreadyExistsValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="forward_agent" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="forwarding.agent.service.annotation.*" />
+          <option name="PATTERN" value="forwarding.agent.service.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="forwarding.agent.service.annotation" />
-      <option name="MAIN_CLASS_NAME" value="forwarding.agent.service.annotation.IsEmailAlreadyExistsValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationApiControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="forward_agent" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="forwarding.agent.api.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="forwarding.agent.api.controllers" />
-      <option name="MAIN_CLASS_NAME" value="forwarding.agent.api.controllers.RegistrationApiControllerIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecurityAuthenticationApiControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="forward_agent" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="forwarding.agent.security.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="forwarding.agent.security" />
-      <option name="MAIN_CLASS_NAME" value="forwarding.agent.security.SecurityAuthenticationApiControllerIntegrationTest" />
+      <option name="PACKAGE_NAME" value="forwarding.agent.service.mapper" />
+      <option name="MAIN_CLASS_NAME" value="forwarding.agent.service.mapper.UserMapperTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,6 +116,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceImplTest.shouldConfirmUserByIdCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="forward_agent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="forwarding.agent.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="forwarding.agent.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="forwarding.agent.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldConfirmUserByIdCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.shouldReturnTrueWhenUserIsConfirmed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="forward_agent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="forwarding.agent.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="forwarding.agent.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="forwarding.agent.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldReturnTrueWhenUserIsConfirmed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationRunner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="forward_agent" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="forwarding.agent.ApplicationRunner" />
@@ -182,10 +164,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ApplicationRunner" />
-        <item itemvalue="JUnit.SecurityAuthenticationApiControllerIntegrationTest" />
-        <item itemvalue="JUnit.RegistrationApiControllerIntegrationTest" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldConfirmUserByIdCorrectly" />
         <item itemvalue="JUnit.UserServiceImplTest" />
-        <item itemvalue="JUnit.IsEmailAlreadyExistsValidatorTest" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldReturnTrueWhenUserIsConfirmed" />
+        <item itemvalue="JUnit.UserMapperTest" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +186,13 @@
       <workItem from="1700693061980" duration="2540000" />
       <workItem from="1700738343302" duration="640000" />
       <workItem from="1700781371469" duration="2664000" />
-      <workItem from="1700863845504" duration="4997000" />
+      <workItem from="1700863845504" duration="5692000" />
+      <workItem from="1700956929404" duration="2660000" />
+      <workItem from="1701078103217" duration="1142000" />
+      <workItem from="1701104358258" duration="599000" />
+      <workItem from="1701270254685" duration="1599000" />
+      <workItem from="1701285261005" duration="1812000" />
+      <workItem from="1701354864157" duration="1958000" />
     </task>
     <task id="LOCAL-00001" summary="created auth and registration with tests, added tables users and roles">
       <created>1700653637082</created>
@@ -227,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700738383772</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added ConfirmApiController for ROLE_ADMIN">
+      <created>1700868968683</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700868968683</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +232,8 @@
     <MESSAGE value="created auth and registration with tests, added tables users and roles" />
     <MESSAGE value="added UserServiceImplTest" />
     <MESSAGE value="added new role UNCONFIRMED_USER" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new role UNCONFIRMED_USER" />
+    <MESSAGE value="added ConfirmApiController for ROLE_ADMIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ConfirmApiController for ROLE_ADMIN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -248,13 +244,8 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/AuthenticationServiceImpl.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -264,13 +255,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java</url>
-          <line>38</line>
+          <line>32</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java</url>
           <line>39</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/forwarding/agent/service/impl/UserServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

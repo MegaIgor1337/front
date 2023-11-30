@@ -1,5 +1,6 @@
 package forwarding.agent.service.impl;
 
+import forwarding.agent.api.exceptions.UserNotFoundException;
 import forwarding.agent.persistense.entity.Role;
 import forwarding.agent.persistense.entity.RoleNameEnum;
 import forwarding.agent.persistense.entity.User;
@@ -13,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Slf4j
@@ -32,10 +34,15 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserResponseDto confirmUser(Long id) {
-        User user = userRepository.getReferenceById(id);
-        user.getRoles().remove(roleRepository.findByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER));
-        user.getRoles().add(roleRepository.findByRoleName(RoleNameEnum.ROLE_USER));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(String.format("User with id %s not found", id)));
+        Role roleToRemove = roleRepository.findByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER);
+        Set<Role> userRoles = new HashSet<>(user.getRoles());
+        userRoles.remove(roleToRemove);
+        userRoles.add(roleRepository.findByRoleName(RoleNameEnum.ROLE_USER));
+        user.setRoles(userRoles);
         User updatedUser = userRepository.save(user);
+        System.out.println(user.getRoles());
         log.info("User confirmed with id {}", id);
         return userMapper.fromEntityToResponseDto(updatedUser);
     }
