@@ -5,16 +5,19 @@
 
     <changeSet id="002" author="tawerka1337228321@mail.ru">
         <insert tableName="roles">
-            <column name="role_name" value="USER"/>
+            <column name="role_name" value="ROLE_USER"/>
         </insert>
         <insert tableName="roles">
-            <column name="role_name" value="ADMIN"/>
+            <column name="role_name" value="ROLE_ADMIN"/>
         </insert>
         <insert tableName="roles">
-            <column name="role_name" value="SUPER_ADMIN"/>
+            <column name="role_name" value="ROLE_SUPER_ADMIN"/>
         </insert>
         <insert tableName="roles">
-            <column name="role_name" value="ACCOUNTANT"/>
+            <column name="role_name" value="ROLE_ACCOUNTANT"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="role_name" value="ROLE_UNCONFIRMED_USER"/>
         </insert>
     </changeSet>
 

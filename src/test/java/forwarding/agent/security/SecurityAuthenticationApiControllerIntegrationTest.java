@@ -24,10 +24,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(PostgreSQLTestContainerExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @SqlGroup({
-        @Sql(scripts = "classpath:testdata/add_users_with_different_roles.sql",
-                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
         @Sql(scripts = "classpath:testdata/clear_users_with_different_roles.sql",
-                executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
+        @Sql(scripts = "classpath:testdata/add_users_with_different_roles.sql",
+                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 })
 class SecurityAuthenticationApiControllerIntegrationTest {
     @Autowired

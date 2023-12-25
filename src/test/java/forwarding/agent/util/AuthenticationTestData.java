@@ -7,8 +7,11 @@ import forwarding.agent.service.dto.AuthenticationRequestDto;
 import forwarding.agent.service.dto.AuthenticationUserDto;
 import forwarding.agent.service.dto.RegistrationRequestDto;
 import lombok.experimental.UtilityClass;
+import org.springframework.http.HttpEntity;
 
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -21,14 +24,14 @@ public class AuthenticationTestData {
     public static final String AUTH_URL_TEMPLATE = "/api/v1/auth/login";
     public static final String REGISTRATION_URL_TEMPLATE = "/api/v1/auth/registration";
     private static final String NO_SUCH_EMAIL = "no-such-email@mail.com";
-    private static final String EMAIL = "user@gmail.com";
+    private static final String EMAIL = "admin@mail.ru";
     private static final String ADMIN_EMAIL = "user-admin@mail.com";
     private static final String PASSWORD = "password2rF";
     private static final String FIRST_NAME = "Igor";
     private static final String LAST_NAME = "Yakubovich";
     private static final String FATHER_NAME = "Sergeevich";
     public static final String ENCODED_PASSWORD = "$2a$12$nU3NTASAvpso5NuAr..2UOQL15kPiJ.IiwFDVZVMP86TUvZrSrf0m";
-    private static final String USER_ROLE_PASSWORD = "user-role";
+    private static final String USER_ROLE_PASSWORD = "1234";
 
 
     public static AuthenticationRequestDto createInvalidCredentials() {
@@ -73,5 +76,12 @@ public class AuthenticationTestData {
                 .fatherName(FATHER_NAME)
                 .password(PASSWORD)
                 .build();
+    }
+
+    public static HttpEntity<Map<String, String>> createLoginRequestHttpEntity() {
+        Map<String, String> requestBody = new HashMap<>();
+        requestBody.put(AUTHENTICATION_RESPONSE_EMAIL_KEY, "admin@mail.ru");
+        requestBody.put("password", "1234");
+        return new HttpEntity<>(requestBody);
     }
 }

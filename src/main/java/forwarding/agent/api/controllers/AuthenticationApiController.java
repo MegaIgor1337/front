@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-@Tag(name = "Authentication Controller", description = "API for working with authentication")
 @Slf4j
 @Validated
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
+@Tag(name = "Authentication Controller", description = "API for working with authentication")
 public class AuthenticationApiController {
 
     private final JwtTokenProvider jwtTokenProvider;
@@ -39,6 +39,7 @@ public class AuthenticationApiController {
         Map<String, String> response = new HashMap<>();
         response.put("email", user.email());
         response.put("token", jwtTokenProvider.createToken(user));
+        log.info("User logged info response - {}", response);
         return ResponseEntity.ok(response);
     }
 }

@@ -2,7 +2,7 @@ version: '1.0'
 services:
   db:
     ports:
-      - 5432:5432
+      - 5433:5432
     container_name: postgresql_container_forwarding_agent
     image: postgres
     environment:
