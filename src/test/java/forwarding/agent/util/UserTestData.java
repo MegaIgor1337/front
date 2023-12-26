@@ -5,6 +5,7 @@ import forwarding.agent.service.dto.UserResponseDto;
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.parameters.P;
 
+import java.util.List;
 import java.util.Set;
 
 import static forwarding.agent.util.RoleTestData.craeteUncomfiredRole;
@@ -62,5 +63,32 @@ public class UserTestData {
                 .lastName(LAST_NAME)
                 .fatherName(FATHER_NAME)
                 .build();
+    }
+
+    public static List<User> createListOfUnconfirmedUsers() {
+        return List.of(
+                craeteUnconfirmedUser(),
+                User.builder()
+                        .id(2L)
+                        .firstName("Sergey")
+                        .lastName("Petrov")
+                        .fatherName("Maxim")
+                        .password(PASSWORD)
+                        .email("sergey@gmail.com")
+                        .roles(Set.of(craeteUncomfiredRole()))
+                        .build()
+        );
+    }
+
+    public static List<UserResponseDto> createListOfUnconfirmedUsersDto() {
+        return List.of(
+                createUserResponseDto(),
+                UserResponseDto.builder()
+                        .id(2L)
+                        .firstName("Sergey")
+                        .lastName("Petrov")
+                        .fatherName("Maxim")
+                        .build()
+        );
     }
 }

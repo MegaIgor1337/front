@@ -10,10 +10,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "Confirmed Controller", description = "API for working with confirming user")
 @Slf4j
@@ -33,5 +32,13 @@ public class ConfirmApiController {
         log.info("Admin started confirming user with id {}", userId);
         UserResponseDto responseDto = userService.confirmUser(userId);
         return ResponseEntity.ok(responseDto);
+    }
+
+    @Operation(summary = "Get list of unconfirmed users")
+    @GetMapping()
+    public ResponseEntity<List<UserResponseDto>> get() {
+        log.info("Admin is getting list of unconfirmed users");
+        List<UserResponseDto> users = userService.getUnconfirmedUsers();
+        return ResponseEntity.ok(users);
     }
 }

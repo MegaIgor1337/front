@@ -23,7 +23,6 @@ import java.util.Map;
 
 import static forwarding.agent.util.AuthenticationTestData.AUTH_URL_TEMPLATE;
 import static forwarding.agent.util.ConfirmTestData.*;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
@@ -50,7 +49,8 @@ public class ConfirmApiControllerIntegrationTest {
                 String.class
         );
 
-        UserResponseDto actualResponse = objectMapper.readValue(response.getBody(), new TypeReference<>() {});
+        UserResponseDto actualResponse = objectMapper.readValue(response.getBody(), new TypeReference<>() {
+        });
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(UNCONFIRMED_USER_EMAIL, actualResponse.email());
     }
@@ -80,18 +80,37 @@ public class ConfirmApiControllerIntegrationTest {
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
 
+    @Test
+    void shouldReturnListOfUnconfirmedUsersAndOk() throws JsonProcessingException {
+        ResponseEntity<String> response = restTemplate.exchange(
+                CONFIRM_URL,
+                HttpMethod.GET,
+                getAuthHttpEntity(),
+                String.class
+        );
+
+        List<UserResponseDto> actual = objectMapper.readValue(response.getBody(), new TypeReference<>() {
+        });
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+        assertEquals(UNCONFIRMED_EXPECTED_SIZE, actual.size());
+        assertEquals(UNCONFIRMED_EXPECTED_EMAIL_OF_USER, actual.get(0).email());
+    }
+
     @SneakyThrows
     private HttpEntity<String> getAuthHttpEntity() {
         HttpEntity<Map<String, String>> requestHttpAuthEntity = AuthenticationTestData.createLoginRequestHttpEntity();
 
-        ResponseEntity<Map<String,String>> responseEntity = restTemplate.exchange(
+        ResponseEntity<Map<String, String>> responseEntity = restTemplate.exchange(
                 AUTH_URL_TEMPLATE,
                 HttpMethod.POST,
                 requestHttpAuthEntity,
-                new ParameterizedTypeReference<>() {}
+                new ParameterizedTypeReference<>() {
+                }
         );
 
-        Map<String, String> responseMap  = responseEntity.getBody();
+        Map<String, String> responseMap = responseEntity.getBody();
         String token = "Bearer " + responseMap.get("token");
 
         HttpHeaders headers = new HttpHeaders();

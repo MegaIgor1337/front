@@ -14,12 +14,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 import static forwarding.agent.util.RoleTestData.craeteUncomfiredRole;
 import static forwarding.agent.util.RoleTestData.createRole;
 import static forwarding.agent.util.UserTestData.*;
+import static forwarding.agent.util.UserTestData.createListOfUnconfirmedUsers;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -128,5 +130,21 @@ public class UserServiceImplTest {
         verify(roleRepository, times(1)).findByRoleName(RoleNameEnum.ROLE_USER);
 
         verify(userRepository, times(1)).save(any(User.class));
+    }
+
+    @Test
+    void shouldReturnListOfUnconfirmedUsers() {
+        List<User> unconfirmedUsers = createListOfUnconfirmedUsers();
+        List<UserResponseDto> unconfirmedUsersDto = createListOfUnconfirmedUsersDto();
+
+        when(userRepository.findAllByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER)).thenReturn(unconfirmedUsers);
+        when(userMapper.fromEntityToResponseDto(any(User.class))).thenReturn(unconfirmedUsersDto.get(0),
+                unconfirmedUsersDto.get(1));
+
+        List<UserResponseDto> result = userService.getUnconfirmedUsers();
+
+        assertEquals(unconfirmedUsers.size(), result.size());
+        assertEquals(unconfirmedUsers.get(0).getFatherName(), result.get(0).fatherName());
+        assertEquals(unconfirmedUsers.get(1).getLastName(), result.get(1).lastName());
     }
 }

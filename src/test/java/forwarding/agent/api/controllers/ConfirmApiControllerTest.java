@@ -12,7 +12,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import static forwarding.agent.util.ConfirmTestData.*;
 import static forwarding.agent.util.UserTestData.USER_ID;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = ConfirmApiController.class)
@@ -64,5 +66,13 @@ public class ConfirmApiControllerTest {
                 put(INVALID_CONFIRM_URL)
                         .contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isNotFound());
+    }
+
+    @Test
+    void shouldReturn200sAndJson() throws Exception {
+        mockMvc.perform(get(CONFIRM_URL)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
 }

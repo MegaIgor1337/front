@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Slf4j
@@ -58,5 +59,11 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UserNotFoundException(String.format("User with id %s does not exist", id)))
                 .getRoles().contains(roleRepository
                         .findByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER));
+    }
+
+    @Override
+    public List<UserResponseDto> getUnconfirmedUsers() {
+        return userRepository.findAllByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER)
+                .stream().map(userMapper::fromEntityToResponseDto).toList();
     }
 }
