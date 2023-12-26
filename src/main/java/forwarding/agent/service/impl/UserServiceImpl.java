@@ -54,7 +54,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isUserConfirmed(Long id) {
-        return !userRepository.getReferenceById(id)
+        return !userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(String.format("User with id %s does not exist", id)))
                 .getRoles().contains(roleRepository
                         .findByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER));
     }

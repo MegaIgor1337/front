@@ -1,5 +1,6 @@
 package forwarding.agent.service.impl;
 
+import forwarding.agent.api.exceptions.UserNotFoundException;
 import forwarding.agent.persistense.entity.Role;
 import forwarding.agent.persistense.entity.RoleNameEnum;
 import forwarding.agent.persistense.entity.User;
@@ -74,9 +75,9 @@ public class UserServiceImplTest {
         User user = craeteUnconfirmedUser();
         Role role = craeteUncomfiredRole();
 
+        when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
         when(roleRepository.findByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER))
                 .thenReturn(role);
-        when(userRepository.getReferenceById(USER_ID)).thenReturn(user);
 
         boolean result = userService.isUserConfirmed(USER_ID);
 
@@ -90,13 +91,21 @@ public class UserServiceImplTest {
 
         when(roleRepository.findByRoleName(RoleNameEnum.ROLE_UNCONFIRMED_USER))
                 .thenReturn(role);
-        when(userRepository.getReferenceById(USER_ID)).thenReturn(user);
+        when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
 
         boolean result = userService.isUserConfirmed(USER_ID);
 
         assertTrue(result);
     }
 
+    @Test
+    void shouldThrowUserNotFoundExceptionWhenCheckIfUserConfirmed() {
+        when(userRepository.findById(USER_ID)).thenReturn(Optional.empty());
+
+        assertThrows(UserNotFoundException.class, () -> {
+            userService.isUserConfirmed(USER_ID);
+        });
+    }
     @Test
     void shouldConfirmUserByIdCorrectly() {
         User unconfirmedUser = craeteUnconfirmedUser();

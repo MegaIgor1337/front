@@ -22,8 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import static forwarding.agent.util.AuthenticationTestData.AUTH_URL_TEMPLATE;
-import static forwarding.agent.util.ConfirmTestData.CONFIRM_URL_BY_ID;
-import static forwarding.agent.util.ConfirmTestData.UNCONFIRMED_USER_EMAIL;
+import static forwarding.agent.util.ConfirmTestData.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
@@ -43,7 +42,7 @@ public class ConfirmApiControllerIntegrationTest {
     private ObjectMapper objectMapper;
 
     @Test
-    void shouldReturn200AndExpectedUserDtoResponseJson() throws JsonProcessingException {
+    void shouldReturnOkAndExpectedUserDtoResponseJson() throws JsonProcessingException {
         ResponseEntity<String> response = restTemplate.exchange(
                 CONFIRM_URL_BY_ID,
                 HttpMethod.PUT,
@@ -54,6 +53,31 @@ public class ConfirmApiControllerIntegrationTest {
         UserResponseDto actualResponse = objectMapper.readValue(response.getBody(), new TypeReference<>() {});
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(UNCONFIRMED_USER_EMAIL, actualResponse.email());
+    }
+
+    @Test
+    void shouldReturnNotFoundWhenUserDoesNotExist() {
+        ResponseEntity<String> response = restTemplate.exchange(
+                CONFIRM_URL_BY_Id_WITH_INVALID_USER_ID,
+                HttpMethod.PUT,
+                getAuthHttpEntity(),
+                String.class
+        );
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+
+    @Test
+    void shouldReturnBadRequestWhenUserAlreadyConfirmed() {
+        ResponseEntity<String> response = restTemplate.exchange(
+                CONFIRM_URL_BY_Id_WITH_CONFIRMED_USER_ID,
+                HttpMethod.PUT,
+                getAuthHttpEntity(),
+                String.class
+        );
+
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
 
     @SneakyThrows
