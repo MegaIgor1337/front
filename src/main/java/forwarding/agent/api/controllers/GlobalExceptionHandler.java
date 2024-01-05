@@ -69,4 +69,14 @@ public class GlobalExceptionHandler {
                 ZonedDateTime.now().withZoneSameInstant(ZoneId.of(EUROPE_MINSK))
         );
     }
+
+    @ExceptionHandler(ContactsDoNotExistException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleContactsDoNotExistException(ContactsDoNotExistException exception) {
+        return new ErrorResponse(
+                HttpStatus.NOT_FOUND.value(),
+                exception.getMessage(),
+                ZonedDateTime.now().withZoneSameInstant(ZoneId.of(EUROPE_MINSK))
+        );
+    }
 }

@@ -1,7 +1,6 @@
 package forwarding.agent.config;
 
 import forwarding.agent.api.exceptions.RestAuthenticationEntryPoint;
-import forwarding.agent.persistense.entity.Role;
 import forwarding.agent.persistense.entity.RoleNameEnum;
 import forwarding.agent.security.jwt.JwtTokenFilterConfigurer;
 import forwarding.agent.security.jwt.JwtTokenProvider;
@@ -22,6 +21,7 @@ public class SecurityConfig {
     private static final String[] AUTH_WHITELIST = {
             "/api/v1/auth/login",
             "/api/v1/auth/registration",
+            "/api/v1/getEmailsForContact",
             "/swagger-resources/**",
             "/swagger-ui/**",
             "/v3/api-docs/**",
