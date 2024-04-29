@@ -1,0 +1,80 @@
+/* loginContainer.css */
+
+
+.login-title {
+  padding: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.login-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  box-sizing: border-box; /* Добавим это свойство */
+}
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-form input {
+  width: calc(100% - 4px); /* Учтем границу шириной 2px с каждой стороны */
+  padding: 1.2rem;
+  border-radius: 9px;
+  border: 2px solid #c5c5c5;
+  background-color: #e0e0e0;
+  box-sizing: border-box; /* Добавим это свойство */
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #0238fc;
+  background-color: #f9f9f9;
+}
+
+.btn--form {
+  color: #fdf2e9;
+  align-self: end;
+  padding: 12px 20px; /* Увеличим отступы */
+  background-color: #3b26de; /* Изменим цвет кнопки */
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn--form:hover {
+  background-color: #3c048f; /* Цвет при наведении */
+}
+
+.login-form input.invalid {
+  border-color: red;
+}
+
+.validation-message {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3px;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.login-form input.invalid {
+  border-color: red !important;
+}
+
+.error-message {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: red;
+  font-size: 18px;
+  margin-top: 10px;
+}

@@ -1,0 +1,149 @@
+/* login.css */
+
+/* Стили для контейнера на весь экран */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.fullscreen-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Стили для изображения на фоне */
+.img-track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Растягивает изображение на всю область */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Устанавливаем ниже текста */
+}
+
+/* Стили для текста поверх изображения */
+.overlay-text {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  top: 2vh; /* Задаем верхний отступ в 2% от высоты видимой области экрана */
+  left: 2vw; /* Задаем левый отступ в 2% от ширины видимой области экрана */
+  color: rgb(9, 49, 101);
+  font-size: 6vw; /* Задаем размер шрифта в 6% от ширины видимой области экрана */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0.3vw 0.3vw 0.6vw rgba(0, 0, 0, 0.3); /* Используем vw для размера тени текста */
+  letter-spacing: 0.2vw; /* Расстояние между буквами в 0.2% от ширины видимой области экрана */
+}
+
+.contacts-container {
+  position: absolute;
+  top: 4vh; /* Задаем верхний отступ контейнера контактов */
+  right: 4vw; /* Задаем правый отступ контейнера контактов */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .overlay-text {
+    font-size: 10px; /* Уменьшаем размер шрифта до 10 пикселей */
+  }
+
+  .contacts-container {
+    right: 10px; /* Устанавливаем отступ контактов до 10 пикселей от правого края */
+  }
+}
+
+.contacts-text {
+  position: relative;
+  padding-right: 35px; /* Уменьшим отступ для стрелочки до 35px */
+}
+
+.contacts-arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Приблизим стрелочку к слову на 5px */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #000; /* Изменим цвет и размер стрелки */
+  transition: transform 0.3s ease; /* Анимация поворота */
+}
+
+.rotate {
+  transform: rotate(-180deg); /* Используем rotate для корректного поворота */
+}
+
+.contacts-email {
+  display: none;
+  position: absolute;
+  top: 100%; /* Положим окно с почтой под стрелкой */
+  right: 0;
+  background-color: #ffffffe5;
+  border: 1px solid #100e0e;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.contacts-email ul {
+  padding-left: 0; 
+}
+
+.contacts-email li {
+  margin-left: 0;  
+  padding-left: 10px;
+  padding-right: 10px; 
+}
+
+.contacts-email.active {
+  display: block;
+  opacity: 1;
+  max-height: 100px; /* Увеличим высоту, если это необходимо */
+  transform: translateY(0);
+}
+
+
+.contacts-container {
+  position: absolute;
+  margin-top: 5px;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contacts-text {
+  font-size: 25px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.contacts-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #333;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contacts-text {
+  /* Ваши остальные стили */
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  transition: color 0.3s ease-in-out; /* Добавляем плавность изменения */
+}
+
+.contacts-text:hover {
+  color: #201f1f; /* Новый цвет текста при наведении */
+}
+
